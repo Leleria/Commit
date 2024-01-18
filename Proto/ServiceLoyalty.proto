@@ -9,25 +9,46 @@ package Loyalty;
 service LoyaltyService{
   rpc AddNewPromoCode (AddNewPromoCodeRequest) returns (AddNewPromoCodeResponse);
   rpc DeletePromoCode (DeletePromoCodeRequest) returns (DeletePromoCodeResponse);
-  rpc ChangePromoCode (ChangePromoCodeRequest) returns (ChangePromoCodeResponse);
+  rpc ChangeNamePromoCode (ChangeNamePromoCodeRequest) returns (ChangeNamePromoCodeResponse);
+  rpc ChangeTypeDiscountPromoCode (ChangeTypeDiscountPromoCodeRequest) returns (ChangeTypeDiscountPromoCodeResponse);
+  rpc ChangeValueDiscountPromoCode (ChangeValueDiscountPromoCodeRequest) returns (ChangeValueDiscountPromoCodeResponse);
+  rpc ChangeDateStartActivePromoCode (ChangeDateStartActivePromoCodeRequest) returns (ChangeDateStartActivePromoCodeResponse);
+  rpc ChangeDateFinishActivePromoCode (ChangeDateFinishActivePromoCodeRequest) returns (ChangeDateFinishActivePromoCodeResponse);
+  rpc ChangeCountUsesPromoCode (ChangeCountUsesPromoCodeRequest) returns (ChangeCountUsesPromoCodeResponse);
 }
-message ChangePromoCodeRequest{
-  string name = 1;
-  int32 typeDiscount = 2;
-  int32 valueDiscount = 3;
-  string dateStartActive = 4;
-  string dateFinishActive = 5;
-  int32 countUses = 6;
-}
-message ChangePromoCodeResponse{
-  string result = 1;
-}
+//Change type discount
+message ChangeTypeDiscountPromoCodeRequest{int32 typeDiscount = 1;}
+message ChangeTypeDiscountPromoCodeResponse{string result = 1;}
+
+//Change value discount
+message ChangeValueDiscountPromoCodeRequest{int32 valueDiscount = 1;}
+message ChangeValueDiscountPromoCodeResponse{string result = 1;}
+
+//Change date start promo code
+message ChangeDateStartActivePromoCodeRequest{string dateStartActive = 1;}
+message ChangeDateStartActivePromoCodeResponse{string result = 1;}
+
+//Change date finish promo code
+message ChangeDateFinishActivePromoCodeRequest{string dateFinishActive = 1;}
+message ChangeDateFinishActivePromoCodeResponse{string result = 1;}
+
+//Change max count uses
+message ChangeCountUsesPromoCodeRequest{int32 countUses = 1;}
+message ChangeCountUsesPromoCodeResponse{string result = 1;}
+
+//Change name
+message ChangeNamePromoCodeRequest{string name = 1;}
+message ChangeNamePromoCodeResponse{string result = 1;}
+
+//Delete
 message DeletePromoCodeRequest{
   string name = 1;
 }
 message DeletePromoCodeResponse{
   string result = 1;
 }
+
+//Add
 message AddNewPromoCodeRequest{
   string name = 1;
   int32 typeDiscount = 2;
