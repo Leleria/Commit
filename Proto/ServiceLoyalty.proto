@@ -9,6 +9,18 @@ package Loyalty;
 service LoyaltyService{
   rpc AddNewPromoCode (AddNewPromoCodeRequest) returns (AddNewPromoCodeResponse);
   rpc DeletePromoCode (DeletePromoCodeRequest) returns (DeletePromoCodeResponse);
+  rpc ChangePromoCode (ChangePromoCodeRequest) returns (ChangePromoCodeResponse);
+}
+message ChangePromoCodeRequest{
+  string name = 1;
+  int32 typeDiscount = 2;
+  int32 valueDiscount = 3;
+  string dateStartActive = 4;
+  string dateFinishActive = 5;
+  int32 countUses = 6;
+}
+message ChangePromoCodeResponse{
+  string result = 1;
 }
 message DeletePromoCodeRequest{
   string name = 1;

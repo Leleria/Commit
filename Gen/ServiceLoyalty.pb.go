@@ -20,6 +20,140 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ChangePromoCodeRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name             string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	TypeDiscount     int32  `protobuf:"varint,2,opt,name=typeDiscount,proto3" json:"typeDiscount,omitempty"`
+	ValueDiscount    int32  `protobuf:"varint,3,opt,name=valueDiscount,proto3" json:"valueDiscount,omitempty"`
+	DateStartActive  string `protobuf:"bytes,4,opt,name=dateStartActive,proto3" json:"dateStartActive,omitempty"`
+	DateFinishActive string `protobuf:"bytes,5,opt,name=dateFinishActive,proto3" json:"dateFinishActive,omitempty"`
+	CountUses        int32  `protobuf:"varint,6,opt,name=countUses,proto3" json:"countUses,omitempty"`
+}
+
+func (x *ChangePromoCodeRequest) Reset() {
+	*x = ChangePromoCodeRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_ServiceLoyalty_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ChangePromoCodeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChangePromoCodeRequest) ProtoMessage() {}
+
+func (x *ChangePromoCodeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ServiceLoyalty_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChangePromoCodeRequest.ProtoReflect.Descriptor instead.
+func (*ChangePromoCodeRequest) Descriptor() ([]byte, []int) {
+	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ChangePromoCodeRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ChangePromoCodeRequest) GetTypeDiscount() int32 {
+	if x != nil {
+		return x.TypeDiscount
+	}
+	return 0
+}
+
+func (x *ChangePromoCodeRequest) GetValueDiscount() int32 {
+	if x != nil {
+		return x.ValueDiscount
+	}
+	return 0
+}
+
+func (x *ChangePromoCodeRequest) GetDateStartActive() string {
+	if x != nil {
+		return x.DateStartActive
+	}
+	return ""
+}
+
+func (x *ChangePromoCodeRequest) GetDateFinishActive() string {
+	if x != nil {
+		return x.DateFinishActive
+	}
+	return ""
+}
+
+func (x *ChangePromoCodeRequest) GetCountUses() int32 {
+	if x != nil {
+		return x.CountUses
+	}
+	return 0
+}
+
+type ChangePromoCodeResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result string `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+}
+
+func (x *ChangePromoCodeResponse) Reset() {
+	*x = ChangePromoCodeResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_ServiceLoyalty_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ChangePromoCodeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChangePromoCodeResponse) ProtoMessage() {}
+
+func (x *ChangePromoCodeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ServiceLoyalty_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChangePromoCodeResponse.ProtoReflect.Descriptor instead.
+func (*ChangePromoCodeResponse) Descriptor() ([]byte, []int) {
+	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ChangePromoCodeResponse) GetResult() string {
+	if x != nil {
+		return x.Result
+	}
+	return ""
+}
+
 type DeletePromoCodeRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -31,7 +165,7 @@ type DeletePromoCodeRequest struct {
 func (x *DeletePromoCodeRequest) Reset() {
 	*x = DeletePromoCodeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_ServiceLoyalty_proto_msgTypes[0]
+		mi := &file_ServiceLoyalty_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -44,7 +178,7 @@ func (x *DeletePromoCodeRequest) String() string {
 func (*DeletePromoCodeRequest) ProtoMessage() {}
 
 func (x *DeletePromoCodeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_ServiceLoyalty_proto_msgTypes[0]
+	mi := &file_ServiceLoyalty_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +191,7 @@ func (x *DeletePromoCodeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePromoCodeRequest.ProtoReflect.Descriptor instead.
 func (*DeletePromoCodeRequest) Descriptor() ([]byte, []int) {
-	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{0}
+	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DeletePromoCodeRequest) GetName() string {
@@ -78,7 +212,7 @@ type DeletePromoCodeResponse struct {
 func (x *DeletePromoCodeResponse) Reset() {
 	*x = DeletePromoCodeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_ServiceLoyalty_proto_msgTypes[1]
+		mi := &file_ServiceLoyalty_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -91,7 +225,7 @@ func (x *DeletePromoCodeResponse) String() string {
 func (*DeletePromoCodeResponse) ProtoMessage() {}
 
 func (x *DeletePromoCodeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ServiceLoyalty_proto_msgTypes[1]
+	mi := &file_ServiceLoyalty_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -104,7 +238,7 @@ func (x *DeletePromoCodeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePromoCodeResponse.ProtoReflect.Descriptor instead.
 func (*DeletePromoCodeResponse) Descriptor() ([]byte, []int) {
-	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{1}
+	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DeletePromoCodeResponse) GetResult() string {
@@ -130,7 +264,7 @@ type AddNewPromoCodeRequest struct {
 func (x *AddNewPromoCodeRequest) Reset() {
 	*x = AddNewPromoCodeRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_ServiceLoyalty_proto_msgTypes[2]
+		mi := &file_ServiceLoyalty_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -143,7 +277,7 @@ func (x *AddNewPromoCodeRequest) String() string {
 func (*AddNewPromoCodeRequest) ProtoMessage() {}
 
 func (x *AddNewPromoCodeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_ServiceLoyalty_proto_msgTypes[2]
+	mi := &file_ServiceLoyalty_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -156,7 +290,7 @@ func (x *AddNewPromoCodeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddNewPromoCodeRequest.ProtoReflect.Descriptor instead.
 func (*AddNewPromoCodeRequest) Descriptor() ([]byte, []int) {
-	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{2}
+	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AddNewPromoCodeRequest) GetName() string {
@@ -212,7 +346,7 @@ type AddNewPromoCodeResponse struct {
 func (x *AddNewPromoCodeResponse) Reset() {
 	*x = AddNewPromoCodeResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_ServiceLoyalty_proto_msgTypes[3]
+		mi := &file_ServiceLoyalty_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -225,7 +359,7 @@ func (x *AddNewPromoCodeResponse) String() string {
 func (*AddNewPromoCodeResponse) ProtoMessage() {}
 
 func (x *AddNewPromoCodeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_ServiceLoyalty_proto_msgTypes[3]
+	mi := &file_ServiceLoyalty_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -238,7 +372,7 @@ func (x *AddNewPromoCodeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddNewPromoCodeResponse.ProtoReflect.Descriptor instead.
 func (*AddNewPromoCodeResponse) Descriptor() ([]byte, []int) {
-	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{3}
+	return file_ServiceLoyalty_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *AddNewPromoCodeResponse) GetResult() string {
@@ -253,6 +387,24 @@ var File_ServiceLoyalty_proto protoreflect.FileDescriptor
 var file_ServiceLoyalty_proto_rawDesc = []byte{
 	0x0a, 0x14, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x4c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79, 0x22,
+	0xea, 0x01, 0x0a, 0x16, 0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x43,
+	0x6f, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61,
+	0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x22,
+	0x0a, 0x0c, 0x74, 0x79, 0x70, 0x65, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x0c, 0x74, 0x79, 0x70, 0x65, 0x44, 0x69, 0x73, 0x63, 0x6f, 0x75,
+	0x6e, 0x74, 0x12, 0x24, 0x0a, 0x0d, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x44, 0x69, 0x73, 0x63, 0x6f,
+	0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0d, 0x76, 0x61, 0x6c, 0x75, 0x65,
+	0x44, 0x69, 0x73, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x28, 0x0a, 0x0f, 0x64, 0x61, 0x74, 0x65,
+	0x53, 0x74, 0x61, 0x72, 0x74, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0f, 0x64, 0x61, 0x74, 0x65, 0x53, 0x74, 0x61, 0x72, 0x74, 0x41, 0x63, 0x74, 0x69,
+	0x76, 0x65, 0x12, 0x2a, 0x0a, 0x10, 0x64, 0x61, 0x74, 0x65, 0x46, 0x69, 0x6e, 0x69, 0x73, 0x68,
+	0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x64, 0x61,
+	0x74, 0x65, 0x46, 0x69, 0x6e, 0x69, 0x73, 0x68, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x12, 0x1c,
+	0x0a, 0x09, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x55, 0x73, 0x65, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28,
+	0x05, 0x52, 0x09, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x55, 0x73, 0x65, 0x73, 0x22, 0x31, 0x0a, 0x17,
+	0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c,
+	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x22,
 	0x2c, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x43, 0x6f,
 	0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x31, 0x0a,
@@ -277,7 +429,7 @@ var file_ServiceLoyalty_proto_rawDesc = []byte{
 	0x17, 0x41, 0x64, 0x64, 0x4e, 0x65, 0x77, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75,
 	0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74,
-	0x32, 0xbc, 0x01, 0x0a, 0x0e, 0x4c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79, 0x53, 0x65, 0x72, 0x76,
+	0x32, 0x92, 0x02, 0x0a, 0x0e, 0x4c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79, 0x53, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x12, 0x54, 0x0a, 0x0f, 0x41, 0x64, 0x64, 0x4e, 0x65, 0x77, 0x50, 0x72, 0x6f,
 	0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x1f, 0x2e, 0x4c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79,
 	0x2e, 0x41, 0x64, 0x64, 0x4e, 0x65, 0x77, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65,
@@ -288,9 +440,15 @@ var file_ServiceLoyalty_proto_rawDesc = []byte{
 	0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x72, 0x6f,
 	0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e,
 	0x4c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x72,
-	0x6f, 0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
-	0x16, 0x5a, 0x14, 0x47, 0x72, 0x70, 0x63, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e,
-	0x41, 0x70, 0x70, 0x3b, 0x73, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x54, 0x0a, 0x0f, 0x43, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x43, 0x6f,
+	0x64, 0x65, 0x12, 0x1f, 0x2e, 0x4c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79, 0x2e, 0x43, 0x68, 0x61,
+	0x6e, 0x67, 0x65, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e, 0x4c, 0x6f, 0x79, 0x61, 0x6c, 0x74, 0x79, 0x2e, 0x43, 0x68,
+	0x61, 0x6e, 0x67, 0x65, 0x50, 0x72, 0x6f, 0x6d, 0x6f, 0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x16, 0x5a, 0x14, 0x47, 0x72, 0x70, 0x63, 0x2e, 0x53, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x41, 0x70, 0x70, 0x3b, 0x73, 0x76, 0x31, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -305,20 +463,24 @@ func file_ServiceLoyalty_proto_rawDescGZIP() []byte {
 	return file_ServiceLoyalty_proto_rawDescData
 }
 
-var file_ServiceLoyalty_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_ServiceLoyalty_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_ServiceLoyalty_proto_goTypes = []interface{}{
-	(*DeletePromoCodeRequest)(nil),  // 0: Loyalty.DeletePromoCodeRequest
-	(*DeletePromoCodeResponse)(nil), // 1: Loyalty.DeletePromoCodeResponse
-	(*AddNewPromoCodeRequest)(nil),  // 2: Loyalty.AddNewPromoCodeRequest
-	(*AddNewPromoCodeResponse)(nil), // 3: Loyalty.AddNewPromoCodeResponse
+	(*ChangePromoCodeRequest)(nil),  // 0: Loyalty.ChangePromoCodeRequest
+	(*ChangePromoCodeResponse)(nil), // 1: Loyalty.ChangePromoCodeResponse
+	(*DeletePromoCodeRequest)(nil),  // 2: Loyalty.DeletePromoCodeRequest
+	(*DeletePromoCodeResponse)(nil), // 3: Loyalty.DeletePromoCodeResponse
+	(*AddNewPromoCodeRequest)(nil),  // 4: Loyalty.AddNewPromoCodeRequest
+	(*AddNewPromoCodeResponse)(nil), // 5: Loyalty.AddNewPromoCodeResponse
 }
 var file_ServiceLoyalty_proto_depIdxs = []int32{
-	2, // 0: Loyalty.LoyaltyService.AddNewPromoCode:input_type -> Loyalty.AddNewPromoCodeRequest
-	0, // 1: Loyalty.LoyaltyService.DeletePromoCode:input_type -> Loyalty.DeletePromoCodeRequest
-	3, // 2: Loyalty.LoyaltyService.AddNewPromoCode:output_type -> Loyalty.AddNewPromoCodeResponse
-	1, // 3: Loyalty.LoyaltyService.DeletePromoCode:output_type -> Loyalty.DeletePromoCodeResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 0: Loyalty.LoyaltyService.AddNewPromoCode:input_type -> Loyalty.AddNewPromoCodeRequest
+	2, // 1: Loyalty.LoyaltyService.DeletePromoCode:input_type -> Loyalty.DeletePromoCodeRequest
+	0, // 2: Loyalty.LoyaltyService.ChangePromoCode:input_type -> Loyalty.ChangePromoCodeRequest
+	5, // 3: Loyalty.LoyaltyService.AddNewPromoCode:output_type -> Loyalty.AddNewPromoCodeResponse
+	3, // 4: Loyalty.LoyaltyService.DeletePromoCode:output_type -> Loyalty.DeletePromoCodeResponse
+	1, // 5: Loyalty.LoyaltyService.ChangePromoCode:output_type -> Loyalty.ChangePromoCodeResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -331,7 +493,7 @@ func file_ServiceLoyalty_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_ServiceLoyalty_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeletePromoCodeRequest); i {
+			switch v := v.(*ChangePromoCodeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -343,7 +505,7 @@ func file_ServiceLoyalty_proto_init() {
 			}
 		}
 		file_ServiceLoyalty_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeletePromoCodeResponse); i {
+			switch v := v.(*ChangePromoCodeResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -355,7 +517,7 @@ func file_ServiceLoyalty_proto_init() {
 			}
 		}
 		file_ServiceLoyalty_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AddNewPromoCodeRequest); i {
+			switch v := v.(*DeletePromoCodeRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -367,6 +529,30 @@ func file_ServiceLoyalty_proto_init() {
 			}
 		}
 		file_ServiceLoyalty_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeletePromoCodeResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_ServiceLoyalty_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AddNewPromoCodeRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_ServiceLoyalty_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddNewPromoCodeResponse); i {
 			case 0:
 				return &v.state
@@ -385,7 +571,7 @@ func file_ServiceLoyalty_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_ServiceLoyalty_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
